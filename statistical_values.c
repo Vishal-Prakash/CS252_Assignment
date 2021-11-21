@@ -1,23 +1,24 @@
-/*
+//P Vishal
+//191EE139
+//CS252 Assignment
+
+
+/* Q3.21
 Write a program in c multi-threaded program that calculates various statistical
 values for a list of numbers. This program will be passed a series
 of numbers on the command line and will then create
 three separate worker threads.
 */
+
+//Required Libraries 
 #include<stdio.h>
 #include<stdlib.h>
 #include<pthread.h>
 
 
-
-int *arg;
+//Global variable declaration
+int *array;
 int n;
-
-
-/*
- average, minimum, and maximum 
- values will be stored globally
-*/
 float average;
 int minimum;
 int maximum;
@@ -27,59 +28,63 @@ void *th()
 {
         float sum=0;
         for(int i=1;i<=n;i++)
-                sum=sum+arg[i];
+                sum=sum+array[i];
         average=(sum/n);
         
 }
+
 //thread2 for calculating minimum value
 void *th1()
 {
 
 
-        minimum=arg[1];
+        minimum=array[1];
         for(int i=1;i<=n;i++)
-                if(minimum>arg[i])
-                minimum=arg[i];
+                if(minimum>array[i])
+                minimum=array[i];
         
 
 }
+
 //thread3 for calculating maximum value
 void *th2()
 {
 
-        maximum=arg[1];
+        maximum=array[1];
         for(int i=1;i<=n;i++)
-                if(maximum<arg[i])
-                        maximum=arg[i];
+                if(maximum<array[i])
+                        maximum=array[i];
                         
 }
+
+//Main function
 int main(int argc, char *argv[])
 {
        
-     n = argc - 1;
-    arg=(int * )malloc(sizeof(int)*n);
+     n = argc - 1; // Passing data elements to command line
+
+    array=(int * )malloc(sizeof(int)*n);
 	
-   /* printf("enter how many elements \n");
-    scanf("%d",&n);
-    printf("enter elements\n");*/
+
 	for(int i=1;i<=n;i++)
 	{
-	    arg[i] = atoi(argv[i]);
+	    array[i] = atoi(argv[i]);
 	}
             
             
-        printf("\n\n");
-        
+        printf("\n\nThe values entered are:");
+
 
         for (int i=1;i<=n;i++)
         {
-                printf("%d ", arg[i]);
+                printf("%d ", array[i]);
 
         }
 
 
     int t,i;
-    //three object of worker threads are t1 ,t2 and t3
+
+    //Declaring 3 worker threads - t1, t2 and t3
     pthread_t t1;
     pthread_t t2;
     pthread_t t3;
@@ -99,9 +104,9 @@ int main(int argc, char *argv[])
     the parent thread will output the values
     once the workers have exited.
     */
-    printf("\n The average value is %f",average);
+    printf("\nThe average value is %f",average);
     printf("\nThe Minimum  value is %d",minimum);
-    printf("\nThe Maximum  value is %d",maximum);
+    printf("\nThe Maximum  value is %d\n",maximum);
         
 return 0;
 
