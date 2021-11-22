@@ -3,7 +3,7 @@
 //CS252 Assignment
 
 
-/* Q3.21
+/* Q4.22
 Write a program in c multi-threaded program that calculates various statistical
 values for a list of numbers. This program will be passed a series
 of numbers on the command line and will then create
