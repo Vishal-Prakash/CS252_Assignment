@@ -42,3 +42,4 @@ Function calls:
 
 My code is based on the Statistical values code provided in the above link. Codes for median and standards daviation were added. Some printf statements were changed to structure the output in a better way. Some variable names were changed to more apt ones. The structuring of the code was changed at some places as per necessity.
   
+**NOTE:** No license was found on their website. The author does not intend any copyright infringement.
