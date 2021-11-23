@@ -35,3 +35,5 @@
 
 My code is based on the [Collatz Conjecture code by Sean Staz](https://github.com/SeanStaz/theCollatzConjecture.c/blob/master/hailstone.c) . Mainly, command line arguments argc and argv were added to take input from the command line. A few variable names were changed. A few additions like displaying pid of the code, changing the printf were added and structure of the code was modified at some places as per necessity. I wemt through the code available on [UCM Assignments](http://ucmassignments.blogspot.com/2016/06/a-collatz-conjecture-collatz-conjecture.html) to get an idea of how the code works and the structuring of the output.  
 
+**NOTE:** No license was found on their website. The author does not intend any copyright infringement.
+
