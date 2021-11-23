@@ -6,7 +6,7 @@
 2. Now, enter the data in the command line: <br> ``` ./values data1, data2,.... ``` 
 3. The code is executed and the results average, minimum, maximum, median and standard deviation are obtained on the command line
 
-**Results Obtained** <br>
+## Results Obtained
 ***Test cases***
 
 1. Finding Statistical Values for even number of input values: 
