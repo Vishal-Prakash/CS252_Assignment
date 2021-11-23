@@ -30,10 +30,10 @@ float medn, variance, standard_dev;
 //thread1 for calculating average
 void *avg()
 {
-        float sum=0;
-        for(int i=0;i<n;i++)
-                sum=sum+array[i];
-        average=(sum/n);
+    float sum=0;
+    for(int i=0;i<n;i++)
+        sum=sum+array[i];
+    average=(sum/n);
         
 }
 
@@ -42,10 +42,10 @@ void *min()
 {
 
 
-        minimum=array[0];
-        for(int i=0;i<n;i++)
-                if(minimum>array[i])
-                    minimum=array[i];
+    minimum=array[0];
+    for(int i=0;i<n;i++)
+        if(minimum>array[i])
+            minimum=array[i];
         
 
 }
@@ -54,15 +54,15 @@ void *min()
 void *max()
 {
 
-        maximum=array[0];
-        for(int i=0;i<n;i++)
-            {
+    maximum=array[0];
+    for(int i=0;i<n;i++)
+    {
 
-                if(maximum<array[i])
-                    {
-                            maximum=array[i];
-                    }    
-            }
+        if(maximum<array[i])
+        {
+            maximum=array[i];
+        }    
+    }
 }
 
 //Thread for calculating Median
@@ -121,15 +121,15 @@ void *stddev()
 int main(int argc, char *argv[])
 {
        
-     n = argc - 1; // Passing data elements to command line
+    n = argc - 1; // Passing data elements to command line
 
     array=(int * )malloc(sizeof(int)*n);
 	
 
-	for(int i=1;i<argc;i++)
-	{
-	    array[i-1] = atoi(argv[i]);
-	}
+    for(int i=1;i<argc;i++)
+    {
+        array[i-1] = atoi(argv[i]);
+    }
             
             
     printf("\n\nThe values entered are:");
@@ -148,25 +148,25 @@ int main(int argc, char *argv[])
     pthread_t t1;
     pthread_t t2;
     pthread_t t3;
-	pthread_t t4;
-	pthread_t t5; 
+    pthread_t t4;
+    pthread_t t5; 
 
     
     //creating threads
-        pthread_create(&t1,NULL,&avg,NULL);
-        pthread_join(t1,NULL);
+    pthread_create(&t1,NULL,&avg,NULL);
+    pthread_join(t1,NULL);
     
-        pthread_create(&t2,NULL,&min,NULL);
-        pthread_join(t2,NULL);
+    pthread_create(&t2,NULL,&min,NULL);
+    pthread_join(t2,NULL);
 
-        pthread_create(&t3,NULL,&max,NULL);
-        pthread_join(t3,NULL);
+    pthread_create(&t3,NULL,&max,NULL);
+    pthread_join(t3,NULL);
 
-		pthread_create(&t4,NULL,&median,NULL);
-        pthread_join(t4,NULL);
+    pthread_create(&t4,NULL,&median,NULL);
+    pthread_join(t4,NULL);
 
-		pthread_create(&t5,NULL,&stddev,NULL);
-        pthread_join(t5,NULL);
+    pthread_create(&t5,NULL,&stddev,NULL);
+    pthread_join(t5,NULL);
        
         
     /*main is the parent thread.
@@ -176,9 +176,9 @@ int main(int argc, char *argv[])
     printf("\nThe Average value is %f",average);
     printf("\nThe Minimum  value is %d",minimum);
     printf("\nThe Maximum  value is %d",maximum);
-	printf("\nThe Median is %f",medn);
-	printf("\nThe Standard Deviation is %f\n",standard_dev);
+    printf("\nThe Median is %f",medn);
+    printf("\nThe Standard Deviation is %f\n",standard_dev);
         
-return 0;
+    return 0;
 
 }
