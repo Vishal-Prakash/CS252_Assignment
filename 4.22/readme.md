@@ -38,4 +38,7 @@ Function calls:
 
 ## References
 
+ * [https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program](https://www.homeworklib.com/qaa/1707080/write-in-c-program-write-a-multi-threaded-program)
+
+My code is based on the Statistical values code provided in the above link. Codes for median and standards daviation were added. Some printf statements were changed to structure the output in a better way. Some variable names were changed to more apt ones. The structuring of the code was changed at some places as per necessity.
   
