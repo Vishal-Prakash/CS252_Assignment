@@ -50,9 +50,9 @@ int main(int argc, char *argv[])
 	if (pid == 0) //child process
 		{
 			printf("\nChild process created having pid %d\n",(int) getpid());
-            printf("\nChild is working...\n");
-            //Finding the Collatz conjecture
-            printf("\nThe Collatz Conjecture Sequence is as follows:\n");
+            		printf("\nChild is working...\n");
+            		//Finding the Collatz conjecture
+            		printf("\nThe Collatz Conjecture Sequence is as follows:\n");
 			printf("%d  ",num);
 			while (num!=1)
 			{
