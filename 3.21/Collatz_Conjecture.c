@@ -17,12 +17,12 @@ C program to generate the Collatz Conjecture for a given starting number.
 //Main function
 int main(int argc, char *argv[])
 {
-	printf("\n\n        Collatz Conjecture\n");
+    printf("\n\n        Collatz Conjecture\n");
 
-	//Local variable declaration
+    //Local variable declaration
     int n=0,num;
 	
-	pid_t pid;
+    pid_t pid;
 
     if (argc == 1)
     {
@@ -41,13 +41,13 @@ int main(int argc, char *argv[])
     }
 
 
-	//Process ID of parent
+    //Process ID of parent
     printf("\nParent process created having pid %d\n", (int) getpid());
         
     //Forking a child process
     pid = fork();
 
-	if (pid == 0) //child process
+    if (pid == 0) //child process
 		{
 			printf("\nChild process created having pid %d\n",(int) getpid());
             		printf("\nChild is working...\n");
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		{
 			printf("\nParents is waiting on child process...\n\n");
 			wait(&n);
-            //Parent process waiting for child process to complete after which it will get executed
+                        //Parent process waiting for child process to complete after which it will get executed
 			printf("\nParent process is done.\n");
 		}
 	return 0; 
